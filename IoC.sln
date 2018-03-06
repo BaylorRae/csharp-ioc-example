@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoC", "src\IoC\IoC.csproj", "{2FB1D7FF-65B2-433C-9B7F-BD255B936DCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoC.Tests", "test\IoC.Tests\IoC.Tests.csproj", "{DFD590EE-93F7-4291-9643-A1C3646AD9DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2FB1D7FF-65B2-433C-9B7F-BD255B936DCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FB1D7FF-65B2-433C-9B7F-BD255B936DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FB1D7FF-65B2-433C-9B7F-BD255B936DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FB1D7FF-65B2-433C-9B7F-BD255B936DCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFD590EE-93F7-4291-9643-A1C3646AD9DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFD590EE-93F7-4291-9643-A1C3646AD9DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFD590EE-93F7-4291-9643-A1C3646AD9DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFD590EE-93F7-4291-9643-A1C3646AD9DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
