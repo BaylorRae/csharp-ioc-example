@@ -90,6 +90,14 @@ namespace IoC.Tests
             subject.Should().BeOfType<Plastic>();
         }
 
+        [Test]
+        public void InitializeObjectWithDependencies()
+        {
+            Container.Register<IMaterial, Toy>();
+            var subject = (Toy) Container.GetInstance<IMaterial>();
+            subject.Material.Should().BeOfType<Plastic>();
+        }
+
         interface IMaterial
         {
             int Weight { get; }
@@ -103,6 +111,17 @@ namespace IoC.Tests
         class Metal : IMaterial
         {
             public int Weight => 84;
+        }
+
+        class Toy : IMaterial
+        {
+            public int Weight => 100;
+            public Plastic Material { get; } = null;
+
+            public Toy(Plastic material)
+            {
+                Material = material;
+            }
         }
     }
 }
