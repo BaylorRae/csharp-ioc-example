@@ -44,6 +44,13 @@ namespace IoC.Tests
             subject.Invoked.Should().BeTrue();
         }
 
+        [Test]
+        public void ItAllowsGenericInitialization()
+        {
+            var subject = Container.GetInstance<A>();
+            subject.Should().BeOfType<A>();
+        }
+
         class A
         { }
 

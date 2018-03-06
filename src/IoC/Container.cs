@@ -5,6 +5,11 @@ namespace IoC
 {
     public class Container
     {
+        public T GetInstance<T>()
+        {
+            return (T) GetInstance(typeof(T));
+        }
+            
         public object GetInstance(Type type)
         {
             var constructor = type.GetConstructors()
