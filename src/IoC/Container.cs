@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace IoC
 {
@@ -6,7 +7,15 @@ namespace IoC
     {
         public object GetInstance(Type type)
         {
-            return Activator.CreateInstance(type);
+            var constructor = type.GetConstructors()
+                .OrderByDescending(c => c.GetParameters().Length)
+                .First();
+
+            var args = constructor.GetParameters()
+                .Select(param => GetInstance(param.ParameterType))
+                .ToArray();
+            
+            return Activator.CreateInstance(type, args);
         }
     }
 }

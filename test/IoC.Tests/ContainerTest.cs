@@ -30,7 +30,28 @@ namespace IoC.Tests
             subject.Should().BeOfType<A>();
         }
 
+        [Test]
+        public void CreatesAnInstanceWithParams()
+        {
+            var subject = (B) Container.GetInstance(typeof(B));
+            subject.A.Should().BeOfType<A>();
+        }
+
         class A
         { }
+
+        class B
+        {
+            public A A { get; }
+
+            public B()
+            {
+            }
+
+            public B(A a)
+            {
+                A = a;
+            }
+        }
     }
 }
