@@ -12,12 +12,17 @@ namespace IoC
         {
             _registeredTypes.Add(typeof(TIn), () => GetInstance(typeof(TOut)));
         }
+
+        public void RegisterSingleton<T>(T obj)
+        {
+            _registeredTypes.Add(typeof(T), () => obj);
+        }
         
         public T GetInstance<T>()
         {
             return (T) GetInstance(typeof(T));
         }
-            
+        
         public object GetInstance(Type type)
         {
             if (_registeredTypes.ContainsKey(type))
