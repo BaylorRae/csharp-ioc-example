@@ -37,6 +37,13 @@ namespace IoC.Tests
             subject.A.Should().BeOfType<A>();
         }
 
+        [Test]
+        public void ItAllowsAParameterlessConstructor()
+        {
+            var subject = (C) Container.GetInstance(typeof(C));
+            subject.Invoked.Should().BeTrue();
+        }
+
         class A
         { }
 
@@ -51,6 +58,16 @@ namespace IoC.Tests
             public B(A a)
             {
                 A = a;
+            }
+        }
+
+        class C
+        {
+            public bool? Invoked { get; set; }
+
+            public C()
+            {
+                Invoked = true;
             }
         }
     }
